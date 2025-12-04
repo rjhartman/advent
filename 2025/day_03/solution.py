@@ -1,7 +1,6 @@
 from pathlib import Path
 from typing import Any
 from functools import reduce
-from sys import exit
 
 REAL_FILE = Path("files/input.txt")
 TEST_FILE = Path("files/test.txt")
