@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import List, Any
+from typing import List
 
 REAL_FILE = Path("files/input.txt")
 TEST_FILE = Path("files/test.txt")
