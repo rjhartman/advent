@@ -4,7 +4,7 @@ from typing import List, Any
 REAL_FILE = Path("files/input.txt")
 TEST_FILE = Path("files/test.txt")
 
-OFFSETS = tuple((x, y) for x in range(-1, 2) for y in range(-1, 2) if (x, y) != (0, 0))
+OFFSETS = tuple((y, x) for x in range(-1, 2) for y in range(-1, 2) if (x, y) != (0, 0))
 
 EMPTY = "."
 PAPER = "@"
