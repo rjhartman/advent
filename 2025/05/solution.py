@@ -31,7 +31,6 @@ def part_1(ranges: List[Range], numbers: List[int]) -> int:
     for number in numbers:
         if not is_spoiled(number, ranges):
             total += 1
-
     return total
 
 
