@@ -41,8 +41,7 @@ def part_2(file: Path) -> int:
             return 1
 
         if lines[y][x] == SPLITTER:
-            left = search(x - 1, y)
-            return left + search(x + 1, y)
+            return search(x - 1, y) + search(x + 1, y)
 
         return search(x, y + 1)
 
