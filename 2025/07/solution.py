@@ -17,17 +17,16 @@ def part_1(file: Path) -> int:
         line = lines[i]
         previous_line = lines[i - 1]
         for j in range(len(line)):
-            if previous_line[j] == START:
-                line[j] = BEAM
+
+            if previous_line[j] not in [START, BEAM]:
                 continue
 
-            if previous_line[j] == BEAM:
-                if line[j] == SPLITTER:
-                    splits += 1
-                    line[j - 1] = BEAM
-                    line[j + 1] = BEAM
-                else:
-                    line[j] = BEAM
+            if line[j] == SPLITTER:
+                splits += 1
+                line[j - 1] = BEAM
+                line[j + 1] = BEAM
+            else:
+                line[j] = BEAM
 
     return splits
 
