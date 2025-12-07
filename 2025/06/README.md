@@ -1,45 +1,43 @@
 <main>
-<article class="day-desc"><h2>--- Day 5: Cafeteria ---</h2><p>As the forklifts break through the wall, the Elves are delighted to discover that there was a cafeteria on the other side after all.</p>
-<p>You can hear a commotion coming from the kitchen. "At this rate, we won't have any time left to put the wreaths up in the dining hall!" Resolute in your quest, you investigate.</p>
-<p>"If only we hadn't switched to the new inventory management system right before Christmas!" another Elf exclaims. You ask what's going on.</p>
-<p>The Elves in the kitchen explain the situation: because of their complicated new inventory management system, they can't figure out which of their ingredients are <em>fresh</em> and which are <span title="No, this puzzle does not take place on Gleba. Why do you ask?"><em>spoiled</em></span>. When you ask how it works, they give you a copy of their database (your puzzle input).</p>
-<p>The database operates on <em>ingredient IDs</em>. It consists of a list of <em>fresh ingredient ID ranges</em>, a blank line, and a list of <em>available ingredient IDs</em>. For example:</p>
-<pre><code>3-5
-10-14
-16-20
-12-18
-
-1
-5
-8
-11
-17
-32
+<article class="day-desc"><h2>--- Day 6: Trash Compactor ---</h2><p>After helping the Elves in the kitchen, you were taking a break and helping them re-enact a movie scene when you over-enthusiastically jumped into the garbage chute!</p>
+<p>A brief fall later, you find yourself in a <span title="To your surprise, the smell isn't that bad.">garbage smasher</span>. Unfortunately, the door's been magnetically sealed.</p>
+<p>As you try to find a way out, you are approached by a family of cephalopods! They're pretty sure they can get the door open, but it will take some time. While you wait, they're curious if you can help the youngest cephalopod with her <a href="/2021/day/18">math homework</a>.</p>
+<p>Cephalopod math doesn't look that different from normal math. The math worksheet (your puzzle input) consists of a list of <em>problems</em>; each problem has a group of numbers that need to be either <em>added</em> (<code>+</code>) or <em>multiplied</em> (<code>*</code>) together.</p>
+<p>However, the problems are arranged a little strangely; they seem to be presented next to each other in a very long horizontal list. For example:</p>
+<pre><code>123 328  51 64 
+ 45 64  387 23 
+  6 98  215 314
+*   +   *   +  
 </code></pre>
-
-<p>The fresh ID ranges are <em>inclusive</em>: the range <code>3-5</code> means that ingredient IDs <code>3</code>, <code>4</code>, and <code>5</code> are all <em>fresh</em>. The ranges can also <em>overlap</em>; an ingredient ID is fresh if it is in <em>any</em> range.</p>
-<p>The Elves are trying to determine which of the <em>available ingredient IDs</em> are <em>fresh</em>. In this example, this is done as follows:</p>
+<p>Each problem's numbers are arranged vertically; at the bottom of the problem is the symbol for the operation that needs to be performed. Problems are separated by a full column of only spaces. The left/right alignment of numbers within each problem can be ignored.</p>
+<p>So, this worksheet contains four problems:</p>
 <ul>
-<li>Ingredient ID <code>1</code> is spoiled because it does not fall into any range.</li>
-<li>Ingredient ID <code>5</code> is <em>fresh</em> because it falls into range <code>3-5</code>.</li>
-<li>Ingredient ID <code>8</code> is spoiled.</li>
-<li>Ingredient ID <code>11</code> is <em>fresh</em> because it falls into range <code>10-14</code>.</li>
-<li>Ingredient ID <code>17</code> is <em>fresh</em> because it falls into range <code>16-20</code> as well as range <code>12-18</code>.</li>
-<li>Ingredient ID <code>32</code> is spoiled.</li>
+<li><code>123</code> * <code>45</code> * <code>6</code> = <code><em>33210</em></code></li>
+<li><code>328</code> + <code>64</code> + <code>98</code> = <code><em>490</em></code></li>
+<li><code>51</code> * <code>387</code> * <code>215</code> = <code><em>4243455</em></code></li>
+<li><code>64</code> + <code>23</code> + <code>314</code> = <code><em>401</em></code></li>
 </ul>
-<p>So, in this example, <em><code>3</code></em> of the available ingredient IDs are fresh.</p>
-<p>Process the database file from the new inventory management system. <em>How many of the available ingredient IDs are fresh?</em></p>
+<p>To check their work, cephalopod students are given the <em>grand total</em> of adding together all of the answers to the individual problems. In this worksheet, the grand total is <code>33210</code> + <code>490</code> + <code>4243455</code> + <code>401</code> = <code><em>4277556</em></code>.</p>
+<p>Of course, the actual worksheet is <em>much</em> wider. You'll need to make sure to unroll it completely so that you can read the problems clearly.</p>
+<p>Solve the problems on the math worksheet. <em>What is the grand total found by adding together all of the answers to the individual problems?</em></p>
 </article>
-<p>Your puzzle answer was <code>694</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>The Elves start bringing their spoiled inventory to the trash chute at the back of the kitchen.</p>
-<p>So that they can stop bugging you when they get new inventory, the Elves would like to know <em>all</em> of the IDs that the <em>fresh ingredient ID ranges</em> consider to be <em>fresh</em>. An ingredient ID is still considered fresh if it is in any range.</p>
-<p>Now, the second section of the database (the available ingredient IDs) is irrelevant. Here are the fresh ingredient ID ranges from the above example:</p>
-<pre><code>3-5
-10-14
-16-20
-12-18
+<p>Your puzzle answer was <code>4693159084994</code>.</p><article class="day-desc"><h2 id="part2">--- Part Two ---</h2><p>The big cephalopods come back to check on how things are going. When they see that your grand total doesn't match the one expected by the worksheet, they realize they forgot to explain how to read cephalopod math.</p>
+<p>Cephalopod math is written <em>right-to-left in columns</em>. Each number is given in its own column, with the most significant digit at the top and the least significant digit at the bottom. (Problems are still separated with a column consisting only of spaces, and the symbol at the bottom of the problem is still the operator to use.)</p>
+<p>Here's the example worksheet again:</p>
+<pre><code>123 328  51 64 
+ 45 64  387 23 
+  6 98  215 314
+*   +   *   +  
 </code></pre>
-<p>The ingredient IDs that these ranges consider to be fresh are <code>3</code>, <code>4</code>, <code>5</code>, <code>10</code>, <code>11</code>, <code>12</code>, <code>13</code>, <code>14</code>, <code>15</code>, <code>16</code>, <code>17</code>, <code>18</code>, <code>19</code>, and <code>20</code>. So, in this example, the fresh ingredient ID ranges consider a total of <em><code>14</code></em> ingredient IDs to be fresh.</p>
-<p>Process the database file again. <em>How many ingredient IDs are considered to be fresh according to the fresh ingredient ID ranges?</em></p>
+<p>Reading the problems right-to-left one column at a time, the problems are now quite different:</p>
+<ul>
+<li>The rightmost problem is <code>4</code> + <code>431</code> + <code>623</code> = <code><em>1058</em></code></li>
+<li>The second problem from the right is <code>175</code> * <code>581</code> * <code>32</code> = <code><em>3253600</em></code></li>
+<li>The third problem from the right is <code>8</code> + <code>248</code> + <code>369</code> = <code><em>625</em></code></li>
+<li>Finally, the leftmost problem is <code>356</code> * <code>24</code> * <code>1</code> = <code><em>8544</em></code></li>
+</ul>
+<p>Now, the grand total is <code>1058</code> + <code>3253600</code> + <code>625</code> + <code>8544</code> = <code><em>3263827</em></code>.</p>
+<p>Solve the problems on the math worksheet again. <em>What is the grand total found by adding together all of the answers to the individual problems?</em></p>
 </article>
-<p>Your puzzle answer was <code>352716206375547</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
+<p>Your puzzle answer was <code>11643736116335</code>.</p><p class="day-success">Both parts of this puzzle are complete! They provide two gold stars: **</p>
 </main>
